@@ -1,8 +1,10 @@
 package es.sarascript.examenandroid
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -47,5 +49,13 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        fun goToComments(view: View, name: String) {
+            val intent = Intent(this, CommentsActivity::class.java).apply {
+                putExtra("name", name)
+            }
+            startActivity(intent)
+        }
+
     }
 }
